@@ -1,4 +1,7 @@
-<h1>Welcome!</h1>
+<h1>Welcome! <%= we_are_excited(:name => params[:name]) if params[:name].present? %></h1>
+
 <p>You should checkout <%= link_to 'shops', shops_path %>.</p>
 
 <p>Maybe you want to add a <%= link_to 'new shop', new_shop_path %>.</p>
+
+<p>Try this: <%= link_to 'home', root_path(:name => "Lynne") %>.</p>
