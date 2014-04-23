@@ -1,4 +1,8 @@
 MyrAccounting::Application.routes.draw do
+  resources :orders
+
+  resources :products
+
   get "welcome/index"
   resources :shops
 
