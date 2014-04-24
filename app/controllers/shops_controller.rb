@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_description, only: [:create]
 
   # GET /shops
   # GET /shops.json
@@ -62,6 +63,10 @@ class ShopsController < ApplicationController
   end
 
   private
+    def set_description
+      shop_params[:description] << " A quality Myr Shop since #{Time.now.year}."
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
       @shop = Shop.find(params[:id])
