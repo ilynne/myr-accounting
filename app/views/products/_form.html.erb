@@ -23,6 +23,15 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+
+<h1> Shop </h1>
+  <%= f.fields_for :shop do |shop_form| %>
+    <div class="field">
+      <%= shop_form.label :name %><br>
+      <%= shop_form.text_field :name %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -4,5 +4,7 @@ class Shop < ActiveRecord::Base
 
 	has_many :products
 	has_many :orders
+
+  accepts_nested_attributes_for :products
 	
 end
