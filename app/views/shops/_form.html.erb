@@ -52,22 +52,6 @@
     <%= f.text_area :description %>
   </div>
 
-<p><h2>Product</h2>
-  <%= f.fields_for :products do |products_form| %>
-  <div class="field">
-    <%= products_form.label :name %><br>
-    <%= products_form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= products_form.label :description %><br>
-    <%= products_form.text_area :description %>
-  </div>
-  <div class="field">
-    <%= products_form.label :price %><br>
-    <%= products_form.text_field :price %>
-  </div>
-  <% end %>
-
   <div class="actions">
     <%= f.submit %>
   </div>
