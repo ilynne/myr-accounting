@@ -26,7 +26,7 @@
 
 <h1> Shop </h1>
   <%= f.fields_for :shop do |shop_form| %>
-    <div class="field">
+    <div id="shop_name" class="field">
       <%= shop_form.label :name %><br>
       <%= shop_form.text_field :name %>
     </div>
