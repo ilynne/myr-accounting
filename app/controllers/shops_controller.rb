@@ -29,6 +29,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
+        ShopMailer.shop_created(@shop, 'admin@example.com').deliver
         format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
         format.json { render action: 'show', status: :created, location: @shop }
       else
@@ -63,8 +64,9 @@ class ShopsController < ApplicationController
   end
 
   private
+
     def set_description
-      shop_params[:description] << " A quality Myr Shop since #{Time.now.year}."
+      shop_params[:description] << " A quality Tiara Shop since #{Time.now.year}."
     end
 
     # Use callbacks to share common setup or constraints between actions.
