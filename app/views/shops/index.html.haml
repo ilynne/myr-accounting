@@ -1,0 +1,40 @@
+%h1 Shops
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Address
+      %th Address2
+      %th City
+      %th State
+      %th Postcode
+      %th Phone
+      %th Fax
+      %th Email
+      %th Description
+      %th 
+      %th 
+      %th 
+
+
+  #tbody
+    -@shops.each do |shop|
+      %tr
+        %td=shop.name
+        %td=shop.address
+        %td=shop.address2
+        %td=shop.city
+        %td=shop.state
+        %td=shop.postcode
+        %td=shop.phone
+        %td=shop.fax
+        %td=shop.email
+        %td=shop.description
+        %td=link_to 'Show', shop
+        %td=link_to 'Edit', edit_shop_path(shop)
+        %td=link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+=link_to 'New Shop', new_shop_path
