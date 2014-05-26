@@ -1,7 +1,6 @@
 MyrAccounting::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -16,7 +15,29 @@ MyrAccounting::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.mailgun.org",
+    :port                 => 587,
+    :domain               => 'sandbox748e8d7ccda246ee9a86a0a8afde0815.mailgun.org',
+    :user_name            => 'postmaster@sandbox748e8d7ccda246ee9a86a0a8afde0815.mailgun.org',
+    :password             => '91b4zg4m2di4',
+    :authentication       => 'plain'
+  }
+
+#   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  # config.action_mailer.smtp_settings = {
+  #   :address              => "smtp.gmail.com",
+  #   :port                 => 587,
+  #   :domain               => 'google.com',
+  #   :user_name            => 'lynne@mypizza.com',
+  #   :password             => 'mVk91zu0JcOx',
+  #   :authentication       => 'plain',
+  #   :enable_starttls_auto => true
+  # }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

@@ -29,7 +29,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        ShopMailer.shop_created(@shop, 'admin@example.com').deliver
+        ShopMailer.shop_created(@shop, 'ilynne@gmail.com').deliver
         format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
         format.json { render action: 'show', status: :created, location: @shop }
       else
